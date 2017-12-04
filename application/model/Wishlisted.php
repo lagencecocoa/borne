@@ -55,9 +55,10 @@ class Wishlisted
             $headers .= "MIME-Version: 1.0".PHP_EOL;
             $headers .= "Content-Type: text/html; charset=ISO-8859-1".PHP_EOL;
 
-            if (mail($mail,$sujet,$message,$headers)){
-                echo '<script type="text/javascript">window.location.href = "/wishlist/index";</script>';
-            }
+            // if (mail($mail,$sujet,$message,$headers)){
+            //     echo '<script type="text/javascript">window.location.href = "/wishlist/index";</script>';
+            // }
+            echo '<script type="text/javascript">window.location.href = "/wishlist/index";</script>';
 
         }else{
             echo "Cette adresse email est invalide.";

@@ -19,6 +19,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="/public/dist/js/demo.js"></script>
 <script src="/public/js/jq-ui/jquery-ui.min.js"></script>
+<script src="/public/assets/js/bootstrap-confirmation.js"></script>
    <script>
        var url = "<?php echo URL; ?>";
        $(document).ready(function(){

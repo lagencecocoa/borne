@@ -61,8 +61,10 @@ class Wishlisted
             //     echo '<script type="text/javascript">window.location.href = "/wishlist/index";</script>';
             // }
 
+
               echo '<script type="text/javascript">window.location.href = "/wishlist/index";</script>';
               
+
 
         }else{
             echo "Cette adresse email est invalide.";

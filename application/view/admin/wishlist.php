@@ -13,6 +13,7 @@
           <th>Liste des produits</th>
           <th>Email</th>
           <th>Date de création de la wishlist</th>
+          <th>Supprimer</th>
         </tr>
       </thead>
       <tbody>
@@ -42,6 +43,7 @@
           </td>
           <td><?php echo $w->email ?></td>
           <td><?php echo date("d-m-Y H:i:s",strtotime($w->creation_date)) ?></td>
+          <td><a class="" data-toggle="confirmation" data-title="Open Google?" href="https://google.com" target="_blank"><span class="glyphicon glyphicon-trash"></span></a></td>
         </tr>
 
   <?php

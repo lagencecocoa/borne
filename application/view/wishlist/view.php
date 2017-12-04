@@ -52,10 +52,10 @@
   </table>
 
   <form action="/wishlist/post" method="POST">
-      <textarea name="serial" style="display:none"><?= serialize($pwish) ?></textarea>
+    <textarea name="serial" style="display:none"><?= serialize($pwish) ?></textarea>
 	  <input type="text" name="name" placeholder="Entrez votre nom" class="form-control" style="width:20%;float:left;margin-right:15px;">
 	  <input type="text" name="firstname" placeholder="Entrez votre prénom" class="form-control" style="width:20%;float:left;margin-right:15px;">
-      <input type="email" name="mail" value="" placeholder="Entrez une adresse mail" class="form-control" style="width:20%;float:left;">
+    <input type="email" name="mail" value="" placeholder="Entrez une adresse mail" class="form-control" style="width:20%;float:left;">
 	  <input type="submit" name="saveWishlist" class="btn btn-primary" style="float:left;margin-left:15px" value="Envoyer la liste">
 
   </form>

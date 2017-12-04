@@ -29,16 +29,18 @@
 		  <td><?php echo $w->name?></td>
           <td><?php echo $w->firstname?></td>
           <td>
+            <button data-toggle="modal" data-target="#wishlist<?php echo $w->id?>">
               <?php
-                  $list ='';
+              $list ='';
 
-                  foreach($productsWished as $p){
-                      $list .= $p->art_seq.', ';
-                  }
+              foreach($productsWished as $p){
+                $list .= $p->art_seq.', ';
+              }
 
-                  $list = rtrim($list, ", ");
-                  echo $list;
+              $list = rtrim($list, ", ");
+              echo $list;
               ?>
+            </button>
           </td>
           <td><?php echo $w->email ?></td>
           <td><?php echo date("d-m-Y H:i:s",strtotime($w->creation_date)) ?></td>
@@ -49,6 +51,48 @@
   ?>
       </tbody>
     </table>
+
+    <?php
+      foreach($allWishlist as $wish){
+          $productsWished = unserialize($wish->products);
+
+    ?>
+
+    <!-- Wishlist Modal -->
+    <div class="modal fade" id="wishlist<?php echo $wish->id?>" tabindex="-1" role="dialog" aria-labelledby="wishlist_id_<?php echo $wish->id?>">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="wishlist_id_<?php echo $wish->id?>">Wishlist de <?php echo $wish->firstname . ' ' . $wish->name ?></h4>
+          </div>
+          <div class="modal-body">
+
+            <?php
+            $list ='';
+
+            foreach($productsWished as $p){
+              $list .= $p->art_seq.', ';
+            }
+
+            $list = rtrim($list, ", ");
+            echo $list;
+            ?>
+
+
+          </div>
+          <div class="modal-footer" style="text-align: center;">
+            mettre bouton d'impression
+            <!-- <button type="submit" name="upload_slides" class="btn btn-primary">Enregistrer les modifications</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <?php
+      }
+    ?>
+
   </div>
 </div>
 
